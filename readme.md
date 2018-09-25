@@ -1,0 +1,1 @@
+Some logics which i used to print some of the patterns which are mostly the triangles, the diamond, with special symbol or the number and their arrangements, with the some different algorithms and preety much easier but length though
