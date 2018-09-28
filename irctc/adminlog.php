@@ -1,0 +1,22 @@
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$un=$_POST['n1'];
+$pss=$_POST['pass'];
+mysql_connect($servername,$username,$password);
+mysql_select_db("irctc");
+$sql="Select * from admins WHERE Username='$un' AND Password='$pss'";
+$result=mysql_query($sql);
+$count=mysql_num_rows($result);
+if($count!=0)
+{
+	session_start();
+	$_SESSION['username']=$un;
+	header("Location:base.php");
+}
+else
+{	
+	header("Location:admin1.html");
+}
+?>

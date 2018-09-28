@@ -1,0 +1,290 @@
+<?php
+    require_once "gconfig.php";
+
+	if (isset($_SESSION['access_token'])) {
+		header('Location: glogindex.php');
+		exit();
+	}
+
+	$loginURL = $gClient->createAuthUrl();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welocme to IRCTC</title>
+	<script type="text/javascript">
+	function preback(){window.history.forward();}
+	setTimeout("preback()",0);
+	window.onunload=function(){null};
+</script>
+<style type="text/css">
+	.navbar{
+		overflow-x:hidden;
+		background-color:none;
+		font-family: 'Amatic SC',cursive;
+		align-content:center;
+		text-align:center;
+		align-content: center;
+		width:100%;
+	}
+	.n1{
+		color:white;
+		width:70%;
+		padding:2px;
+		float:left;
+		overflow-x:hidden;
+		text-align: left;
+		align-content:center;
+		margin:2px;
+		font-size: 40px;
+		background-color:none;
+	}
+	.n2{
+		width:25%;
+		padding:12px;
+		float:right;
+		font-size:50px;
+		overflow-x:hidden;
+		align-content: center;
+		text-align: right;
+		margin:2px;
+		background-color: none;
+	}
+	.o1{
+		width:7%;
+		margin:2px;
+		padding-top:4px;
+		text-align: left;
+		float:left;
+		margin-top: 2px;
+		padding-left: 5px;
+		background-color: none;
+	}
+	a{
+		color:#cccccc;
+		text-decoration: none;
+	}
+	.o2{
+		width:88%;
+		margin:2px;
+		padding-top: 4px;
+		text-align: left;
+		float:left;
+		font-size:50px;
+		color:white;
+		background-color: none;
+	}
+	.o1 :hover:not(.active){
+		background-color: none;
+	}
+	.o2 :hover:not(.active){
+		background-color: none;
+	}
+	.n2 :hover:not(.active){
+		background-color: none;
+	}
+	ul{
+		list-style-type:none;
+		margin-top:0.05%;
+		padding:0;
+		width:100%;
+		height:30%;
+		font-family:'Amatic SC',cursive;
+		font-size: 27px;
+		background-color: #cccccc;
+		overflow:hidden;
+		border-radius: 12.5px;
+	}
+	li a{
+		display:block;
+		color:#000;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+	a{
+		float:left;
+	}
+	li{
+		float:left;
+	}
+	li a.active{
+		background-color: #4d94ff;
+		color:white;
+	}
+	li a:hover:not(.active){
+		background-color: #cccccc;
+		color:white;
+	}
+	.active{
+		background-color: #80b3ff;
+	}
+	.button {
+	float: left;
+	background-color:#0033cc ;
+	margin-top: 10px;
+	border: none;
+	color : white;
+	padding : 15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:25px;
+	margin:4px 2 px;
+	cursor:pointer;
+	font-family: 'Amatic SC', cursive;
+	}
+	.sign_in
+{
+  float:left;
+width="30%";
+height="50%";
+margin-top: 3.1%;
+padding: 1%;
+margin-left: 8%;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+color: #ffffff;
+text-align: center;
+background-color: #668cff;  
+border: 5px solid #cccccc;
+border-radius: 12.5px;
+}
+	.sign_in1
+{
+  float:left;
+width="10%";
+height="10%";
+margin-top: 3.1%;
+padding-right: 0%;
+margin-left: 0%;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+color: black;
+text-align: left;
+background-color: none;  
+
+
+}
+.user
+{
+width="20%";
+height="50%";
+margin-top: 0%;  
+margin-bottom: 0%;
+
+}
+.rgbn
+{
+  width="50%";
+  height="50%";
+  float: right;
+  margin-top: 10%;
+}
+.myslides{display:none;}
+.slideshow-container{
+	width:650px;
+	height:350px;
+	float: right;
+  margin-right: 2%;
+  margin-top: 2.5%;
+  border: 2px solid #cccccc;
+  border-radius: 12.5px;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+</style>
+</head>
+<script type="text/javascript" src="logval.js">
+</script>
+<body background="Seamless Polygon Backgrounds Vol2\Ready to use JPGs\01.jpg">
+<div class="navbar">
+	<div class="n1">
+		<div class="o1"><a href="index.html"><img src="64332.png" height="80 px"></a></div>
+		<div class="o2"><a href="index.html">|IRCTC-E-Reservation|</a></div>	
+	</div>
+	<div class="n2">
+		<a>|Contact Us|</a>
+	</div>
+</div>		
+<ul>
+	<li><a class="active" href="index.html">Home</a></li>
+	<li><a href="train2.php">Trains</a></li>
+	<li><a href="map.html">Map</a></li>
+	<li><a href=register.html>Register</a></li>
+	<li><a>About</a></li>
+</ul>
+<div class="sign_in1">
+<table style="border: 1px solid #cccccc;font-family: 'Amatic SC',cursive;">
+ 	<div style="margin-top:0%;font-family:'Amatic SC',cursive;font-size: 25px">
+Please Fill in your Login Details!!<br><form name="logform" id="logform" method="POST" action="logged.php">
+Enter your Name:-<br>  
+<input type="text" name="n1" id="n1" autofocus="name" style="margin-left:60px;padding: 7px;width:70%;font-family: 'Amatic SC',cursive;font-size: 25px;"><br>
+Enter your Password:- <br>
+<input type="password" name="pass" id="pass" maxlength="25" style="margin-left:60px;padding: 7px;width:70%;font-family: 'Amatic SC',cursive;font-size: 25px;"><br>
+<input type="submit" name="submit" value="Log In" class="button"><br><br><br>
+
+<a href="register.html" >Forgot Password??</a>
+</pre>
+</form>
+</table>
+</div>
+</table>
+</div>
+<div class="sign_in">
+ <div class="user">
+ 	<img src="icons8-user.png"></br>New User???</br>
+ </div>
+ <div class="rgbn">
+ 	<button class="button"><a href="register.html">Register Here</a></button>
+ </div>
+ </div>	
+ <div class="sign_in">
+ <div class="user">
+ 	<img src="icons8-user.png"></br>New User???</br>
+ </div>
+ <div class="rgbn">
+ 	<input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Google" class="button"></div>
+ </div>	
+ <div class="slideshow-container">
+<div class="mySlides fade">
+  <img src="437778.jpg" style="width:650px;height:350px;border-radius: 12.5px">
+</div>
+
+<div class="mySlides fade">
+  <img src="672793.jpg" style="width:650px;height:350px;border-radius: 12.5px">
+</div>
+
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
